@@ -1,7 +1,8 @@
+// CarCard.jsx
 import React from 'react';
-import './Car.css'; 
+import './CarCard.css'; // Импорт стилей для компонента
 
-export default function Car ( {car} ) {
+export default function CarCard({ vehicle }) {
   const {
     thumbnail,
     title,
@@ -11,7 +12,7 @@ export default function Car ( {car} ) {
     description,
     availabilityStatus,
     warrantyInformation,
-  } = car;
+  } = vehicle;
 
   return (
     <div className="car-card">
@@ -21,8 +22,8 @@ export default function Car ( {car} ) {
       <p className="car-price">${price}</p>
       <p className="car-rating">Rating: {rating} ⭐</p>
       <p className="car-description">{description}</p>
-      <p className="car-availability">{availabilityStatus}</p>
-      <p className="car-warranty">{warrantyInformation}</p>
+      <p className="car-availability">Availability: {availabilityStatus}</p>
+      <p className="car-warranty">Warranty: {warrantyInformation}</p>
     </div>
   );
-};
+}
