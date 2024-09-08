@@ -1,0 +1,14 @@
+.testimonials {
+    display: flex;
+    flex-direction: column;
+}
+
+.testimonial {
+    display: block;
+    max-width: 300px;
+    border: 2px solid black;
+}
+
+.testimonial-review {
+    color: darkblue;
+}
