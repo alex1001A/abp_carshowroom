@@ -1,6 +1,5 @@
 // CarCard.jsx
 import React from 'react';
-import './CarCard.css'; // Импорт стилей для компонента
 
 export default function CarCard({ vehicle }) {
   const {

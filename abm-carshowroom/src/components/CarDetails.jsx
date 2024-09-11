@@ -5,8 +5,6 @@ import { useVehicles } from "../components/context/CarContext";
 
 import Testimonials from "./Testimonials";
 
-import "./CarDetails.css";
-
 export default function CarDetails() {
   const { vehicleId } = useParams();
   const { vehicles, loading, error } = useVehicles();
@@ -50,33 +48,39 @@ export default function CarDetails() {
 
   return (
     <div className="car-details-page">
-      <a href="/vehicles">Back to Car showroom</a>
-      <h1>{vehicle.title}</h1>
-      <img src={vehicle.thumbnail} alt={vehicle.title} />
-      <p>{vehicle.description}</p>
-      <p>Price: ${vehicle.price}</p>
-      <p>Brand: {vehicle.brand}</p>
-      <form
-        action="#"
-        onSubmit={(e) => {
-          e.preventDefault();
-          addReview();
-        }}
-      >
-        <div className="review-form">
-          {/* правильно обновляем state */}
-          <input placeholder="Type your name" type="text" value={review.reviewerName} onChange={(e) => setReview({ ...review, reviewerName: e.target.value })} />
-          <textarea
-            id="comment"
-            value={review.comment}
-            onInput={(e) => setReview({ ...review, comment: e.target.value })} // обновляем состояние при изменении текста
-            placeholder="Write your review here"
-          ></textarea>
-          {/* Кнопка для добавления отзыва */}
-          <button type="submit">Add comment</button>
+      <div className="container">
+        <div className="car-detail-column">
+        <a href="/vehicles">{`< Back to Showroom`}</a>
+          <h1 className="title">{vehicle.title}</h1>
+          <img className="car-details-image" src={vehicle.thumbnail} alt={vehicle.title} />
+          <p>{vehicle.description}</p>
+          <p>Price: ${vehicle.price}</p>
+          <p>Brand: {vehicle.brand}</p>
         </div>
-      </form>
-      <Testimonials vehicle={vehicle} allReviews={allReviews} />
+        <div className="car-detail-column">
+          <form
+            action="#"
+            onSubmit={(e) => {
+              e.preventDefault();
+              addReview();
+            }}
+          >
+            <div className="review-form">
+              {/* правильно обновляем state */}
+              <input placeholder="Type your name" type="text" value={review.reviewerName} onChange={(e) => setReview({ ...review, reviewerName: e.target.value })} />
+              <textarea
+                id="comment"
+                value={review.comment}
+                onInput={(e) => setReview({ ...review, comment: e.target.value })} // обновляем состояние при изменении текста
+                placeholder="Write your review here"
+              ></textarea>
+              {/* Кнопка для добавления отзыва */}
+              <button type="submit">Add comment</button>
+            </div>
+          </form>
+        <Testimonials vehicle={vehicle} allReviews={allReviews} />
+        </div>
+      </div>
     </div>
   );
 }

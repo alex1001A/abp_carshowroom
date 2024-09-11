@@ -1,8 +1,6 @@
 import React from 'react'
 import Testimonial from './Testimonial'
 
-import './Testimonials.css'
-
 function Testimonials({allReviews}) {
 
   return (
