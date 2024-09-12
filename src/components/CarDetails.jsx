@@ -56,7 +56,7 @@ export default function CarDetails() {
     <div className="car-details-page">
       <div className="container">
         <div className="car-detail-column">
-          <a href="/vehicles">{`< Back to Showroom`}</a>
+          <a href="/">{`< Back to Showroom`}</a>
           <h1 className="title">{vehicle.title}</h1>
           <img className="car-details-image" src={vehicle.thumbnail} alt={vehicle.title} />
           <p>{vehicle.description}</p>
