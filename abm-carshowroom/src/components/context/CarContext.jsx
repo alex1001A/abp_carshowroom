@@ -8,16 +8,20 @@ export function CarProvider({ children }) {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch('https://dummyjson.com/products/category/vehicle')
-      .then((res) => res.json())
-      .then((data) => {
+    const fetchVehicles = async () => {
+      try {
+        const response = await fetch('https://dummyjson.com/products/category/vehicle');
+        if (!response.ok) throw new Error('Ошибка загрузки данных');
+        const data = await response.json();
         setVehicles(data.products);
-        setLoading(false);
-      })
-      .catch((error) => {
+      } catch (error) {
         setError(error);
+      } finally {
         setLoading(false);
-      });
+      }
+    };
+
+    fetchVehicles();
   }, []);
 
   return (

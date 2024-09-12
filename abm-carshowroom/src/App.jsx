@@ -1,8 +1,8 @@
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import React from "react";
+import { Routes, Route } from "react-router-dom";
 
-import Home from './pages/Home';
-import CarDetails from './components/CarDetails';
+import Home from "./pages/Home";
+import CarDetails from "./components/CarDetails";
 
 export default function App() {
   return (
