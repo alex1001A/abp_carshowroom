@@ -63,7 +63,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/a
 
 ### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+The application is deployed and available at [https://abp-car.netlify.app]. You can visit this link to see the live version of the application.
 
 ### `npm run build` fails to minify
 
